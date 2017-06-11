@@ -14,6 +14,6 @@ public class HelloWorld {
         for(int i = 0; i < 10000000; i++) {
             sb.append("Hello World");
         }
-        log.error(sb.toString(), new Exception("Just testing"));
+        log.error(sb.toString());
     }
 }

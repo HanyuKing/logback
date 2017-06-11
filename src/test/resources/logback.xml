@@ -9,21 +9,24 @@
         </layout>
     </appender>
 
-    <!--<appender name="EMAIL2" class="ch.qos.logback.classic.net.SMTPAppender">-->
-        <!--<SMTPHost>smtp.163.com</SMTPHost>-->
-        <!--<SMTPPort>25</SMTPPort>-->
-        <!--<Username>m15070010574_1@163.com</Username>-->
-        <!--<Password>123456whyWHY</Password>-->
-        <!--<To>1093615441@qq.com</To>-->
-        <!--<From>m15070010574_1@163.com</From>-->
-        <!--<Subject>TESTING: %logger{20} - %m</Subject>-->
-        <!--<layout class="ch.qos.logback.classic.PatternLayout">-->
-            <!--<Pattern>%date %-5level %logger - %message%n</Pattern>-->
-        <!--</layout>-->
-    <!--</appender>-->
+    <appender name="EMAIL2" class="ch.qos.logback.classic.net.SMTPAppender">
+        <SMTPHost>smtp.163.com</SMTPHost>
+        <SMTPPort>25</SMTPPort>
+        <Username>m15070010574_1@163.com</Username>
+        <Password>123456whyWHY</Password>
+        <To>1093615441@qq.com</To>
+        <From>m15070010574_1@163.com</From>
+        <Subject>TESTING: %logger{20} - %m</Subject>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%date %-5level %logger - %message%n</Pattern>
+        </layout>
+        <cyclicBufferTracker class="ch.qos.logback.core.spi.CyclicBufferTracker">
+            <bufferSize>1</bufferSize>
+        </cyclicBufferTracker>
+    </appender>
 
     <root level="error">
-        <appender-ref ref="STDOUT" />
+        <appender-ref ref="EMAIL2" />
     </root>
 
 </configuration>

@@ -1,4 +1,6 @@
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Marker;
+import org.slf4j.MarkerFactory;
 
 /**
  * @author wanghanyu
@@ -8,6 +10,10 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class HelloWorld {
     public static void main(String[] args) {
-        log.error("Hello World");
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0; i < 10000000; i++) {
+            sb.append("Hello World");
+        }
+        log.error(sb.toString(), new Exception("Just testing"));
     }
 }
